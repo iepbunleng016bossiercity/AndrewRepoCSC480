@@ -1,0 +1,9 @@
+language: csharp
+solution: CSC480CI.sln
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+steps:
+  - script: |
+    dotnet tool install --global boots
+    boots --stable Xamarin.Android
+    boots --stable Xamarin.iOS
