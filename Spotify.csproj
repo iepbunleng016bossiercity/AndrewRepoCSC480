@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise" Version="0.9.2" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.2" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.2" />
+    <PackageReference Include="SpotifyAPI.Web" Version="6.0.0" />
+    <PackageReference Include="SpotifyAPI.Web.Auth" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
