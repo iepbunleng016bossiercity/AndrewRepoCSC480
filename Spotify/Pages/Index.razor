@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<a href="@_authUri">
+    Login via Spotify
+</a>
+<Button Clicked="@GenerateArtists" Size="Size.Medium" name="getArtists">Get Artists</Button>
+<Button Clicked="@CreatePlaylist" Size="Size.Medium" name="makePlaylist">Make Playlist</Button>
+
+@if (!string.IsNullOrEmpty(_playlistUrl))
+{
+    <a href="@_playlistUrl">Playlist is here!</a>
+}
+
+<LoadingIndicator NullCheckObject="_results">
+    @foreach (var a in _results)
+    {
+        <Card>
+            <CardImage Source="@a.Images.FirstOrDefault()?.Url" Style="width: 200px;" />
+            <CardBody>
+                <CardTitle>
+                    @a.Name
+                </CardTitle>
+                <CardFooter>
+                    @a.Followers.Total Followers
+                </CardFooter>
+            </CardBody>
+        </Card>
+    }
+</LoadingIndicator>
