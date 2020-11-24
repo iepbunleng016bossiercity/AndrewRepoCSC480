@@ -9,4 +9,3 @@ script:
 - dotnet test Spotify.Tests/Spotify.Tests.csproj
 install:
 - dotnet restore
-
