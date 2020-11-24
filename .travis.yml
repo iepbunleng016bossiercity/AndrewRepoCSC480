@@ -1,9 +1,10 @@
 language: csharp
-solution: CSC480CI.sln
+solution: Spotify.sln
 variables:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-steps:
-  - script: |
-    dotnet tool install --global boots
-    boots --stable Xamarin.Android
-    boots --stable Xamarin.iOS
+install:
+  nuget restore Spotify.sln
+  nuget install xunit.runners -Version 2.4.0 -OutputDirectory testrunner
+script:
+ - msbuild /p:Configuration=Release Spotify.sln
+ - dotnet restore
